@@ -4,11 +4,16 @@ import 'package:get/get.dart';
 import 'package:machuda_landing_page/src/controller/layout_controller.dart';
 import 'package:machuda_landing_page/src/controller/web_scroll_controller.dart';
 import 'package:machuda_landing_page/src/ui/content/content_01.dart';
+import 'package:machuda_landing_page/src/ui/content/content_01_mobile.dart';
 import 'package:machuda_landing_page/src/ui/content/content_02.dart';
+import 'package:machuda_landing_page/src/ui/content/content_02_mobile.dart';
 import 'package:machuda_landing_page/src/ui/content/content_03.dart';
+import 'package:machuda_landing_page/src/ui/content/content_03_mobile.dart';
 import 'package:machuda_landing_page/src/ui/content/content_04.dart';
+import 'package:machuda_landing_page/src/ui/content/content_04_mobile.dart';
 import 'package:machuda_landing_page/src/ui/content/content_05.dart';
 import 'package:machuda_landing_page/src/ui/footer.dart';
+import 'package:machuda_landing_page/src/ui/footer_mobile.dart';
 import 'package:machuda_landing_page/src/ui/header.dart';
 
 class LandingPage extends GetView<LayoutController> {
@@ -30,6 +35,11 @@ class LandingPage extends GetView<LayoutController> {
           return Stack(
             children: [
               Obx(() => Listener(
+                    onPointerMove: (event) {
+                      if (!controller.isDesktop.value) {
+                        WebScrollController.to.offset.value = _controller.offset;
+                      }
+                    },
                     onPointerSignal: (event) {
                       if (event is PointerScrollEvent) {
                         double newOffset = _controller.offset + event.scrollDelta.dy;
@@ -48,17 +58,27 @@ class LandingPage extends GetView<LayoutController> {
                     child: ListView(
                       physics: controller.isDesktop.value
                           ? const NeverScrollableScrollPhysics()
-                          : const BouncingScrollPhysics(),
+                          : const ClampingScrollPhysics(),
                       controller: _controller,
                       children: [
                         Column(
-                          children: const [
-                            Content01(),
-                            Content02(),
-                            Content03(),
-                            Content04(),
-                            Content05(),
-                            Footer(),
+                          children: [
+                            controller.isDesktop.value
+                                ? const Content01()
+                                : const Content01Mobile(),
+                            controller.isDesktop.value
+                                ? const Content02()
+                                : const Content02Mobile(),
+                            controller.isDesktop.value
+                                ? const Content03()
+                                : const Content03Mobile(),
+                            controller.isDesktop.value
+                                ? const Content04()
+                                : const Content04Mobile(),
+                            const Content05(),
+                            controller.isDesktop.value
+                                ? const Footer()
+                                : const FooterMobile(),
                           ],
                         ),
                       ],

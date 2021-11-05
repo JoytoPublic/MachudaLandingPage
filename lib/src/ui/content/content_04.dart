@@ -187,7 +187,7 @@ class Content04 extends GetView<WebScrollController> {
                                     ),
                                     const Text(
                                       '365일 내내 해도 부족한 공부시간.'
-                                      '\n자투리 시간을 활용한 플래시카드학습법으로 꾸준히 공부할 수 있도록 도와줄 거예요.',
+                                      '\n자투리 시간을 활용한 플래시카드 학습법으로 꾸준히 공부할 수 있도록 도와줄 거예요.',
                                       style: TextStyle(
                                         color: Color(0xFF37352F),
                                         fontSize: 18,

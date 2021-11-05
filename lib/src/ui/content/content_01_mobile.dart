@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:machuda_landing_page/src/controller/layout_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Content01 extends GetView<LayoutController> {
-  const Content01({Key? key}) : super(key: key);
+class Content01Mobile extends GetView<LayoutController> {
+  const Content01Mobile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 840,
+      height: 720,
       color: Colors.white,
       child: Stack(
         children: [
@@ -28,10 +28,10 @@ class Content01 extends GetView<LayoutController> {
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(left: 360, bottom: 120),
+              padding: const EdgeInsets.only(left: 120, bottom: 240),
               child: Image.asset(
                 'assets/circle.png',
-                height: 500,
+                height: 250,
               ),
             ),
           ),
@@ -42,45 +42,46 @@ class Content01 extends GetView<LayoutController> {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 196,
+                    height: 160,
                   ),
                   const Text(
                     'AI 맞춤공부로'
-                    '\n어떤 문제든 똑소리 나게 \'맞추다\'',
+                    '\n어떤 문제든 똑소리 나게'
+                    '\n\'맞추다\'',
                     style: TextStyle(
                       color: Color(0xFF37352F),
-                      fontSize: 48,
+                      fontSize: 28,
                       fontWeight: FontWeight.w700,
                     ),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(
-                    height: 72,
+                    height: 36,
                   ),
                   const Text(
                     '공부 인생이 바뀌는 터닝포인트!'
                     '\n1:1 학습케어앱 맞추다를 만나보세요.'
-                    '\n성적 상승을 위해 내게 꼭 맞는 공부를 초밀착가이드 해줄 거예요.',
+                    '\n성적 상승을 위해 내게 꼭 맞는 공부를'
+                    '\n초밀착가이드 해줄 거예요.',
                     style: TextStyle(
                       color: Color(0xFF37352F),
-                      fontSize: 18,
+                      fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(
-                    height: 84,
+                    height: 42,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Column(
                     children: [
                       // 아이패드 다운로드
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: 280,
-                            height: 80,
+                            width: 180,
+                            height: 56,
                             child: ElevatedButton(
                               onPressed: () async {
                                 var _url = 'https://www.naver.com/';
@@ -100,10 +101,10 @@ class Content01 extends GetView<LayoutController> {
                                 children: [
                                   Image.asset(
                                     'assets/apple.png',
-                                    height: 44,
+                                    height: 24,
                                   ),
                                   const SizedBox(
-                                    width: 18,
+                                    width: 10,
                                   ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -113,7 +114,7 @@ class Content01 extends GetView<LayoutController> {
                                         'Available on the iPad',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 8,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
@@ -121,7 +122,7 @@ class Content01 extends GetView<LayoutController> {
                                         'Apple store',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 24,
+                                          fontSize: 18,
                                           fontFamily: 'Roboto',
                                           fontWeight: FontWeight.w400,
                                         ),
@@ -132,14 +133,11 @@ class Content01 extends GetView<LayoutController> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 12,
-                          ),
                           const Text(
                             'iOS 0.6 이상 지원',
                             style: TextStyle(
                               color: Color(0xFF707070),
-                              fontSize: 15,
+                              fontSize: 10,
                               fontWeight: FontWeight.w400,
                             ),
                             textAlign: TextAlign.center,
@@ -147,7 +145,7 @@ class Content01 extends GetView<LayoutController> {
                         ],
                       ),
                       const SizedBox(
-                        width: 24,
+                        height: 18,
                       ),
                       // 아이폰 다운로드
                       Column(
@@ -156,8 +154,8 @@ class Content01 extends GetView<LayoutController> {
                           Opacity(
                             opacity: 0.4,
                             child: Container(
-                              width: 280,
-                              height: 80,
+                              width: 180,
+                              height: 56,
                               decoration: BoxDecoration(
                                 color: const Color(0xFFC70D03),
                                 borderRadius: BorderRadius.circular(14),
@@ -167,10 +165,10 @@ class Content01 extends GetView<LayoutController> {
                                 children: [
                                   Image.asset(
                                     'assets/apple.png',
-                                    height: 44,
+                                    height: 24,
                                   ),
                                   const SizedBox(
-                                    width: 18,
+                                    width: 10,
                                   ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -180,7 +178,7 @@ class Content01 extends GetView<LayoutController> {
                                         'Available on the iPhone',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 8,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
@@ -188,7 +186,7 @@ class Content01 extends GetView<LayoutController> {
                                         'Apple store',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 24,
+                                          fontSize: 16,
                                           fontFamily: 'Roboto',
                                           fontWeight: FontWeight.w400,
                                         ),
@@ -199,14 +197,11 @@ class Content01 extends GetView<LayoutController> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 12,
-                          ),
                           const Text(
                             'iPhone 버전 출시 예정',
                             style: TextStyle(
                               color: Color(0xFF707070),
-                              fontSize: 15,
+                              fontSize: 10,
                               fontWeight: FontWeight.w400,
                             ),
                             textAlign: TextAlign.center,
@@ -214,7 +209,7 @@ class Content01 extends GetView<LayoutController> {
                         ],
                       ),
                       const SizedBox(
-                        width: 24,
+                        height: 18,
                       ),
                       // 안드로이드 다운로드
                       Column(
@@ -223,23 +218,21 @@ class Content01 extends GetView<LayoutController> {
                           Opacity(
                             opacity: 0.4,
                             child: Container(
-                              width: 280,
-                              height: 80,
+                              width: 180,
+                              height: 56,
                               decoration: BoxDecoration(
                                 color: const Color(0xFFC70D03),
                                 borderRadius: BorderRadius.circular(14),
                               ),
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const SizedBox(
-                                    width: 32,
-                                  ),
                                   Image.asset(
                                     'assets/google_play.png',
-                                    height: 44,
+                                    height: 24,
                                   ),
                                   const SizedBox(
-                                    width: 18,
+                                    width: 10,
                                   ),
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -249,7 +242,7 @@ class Content01 extends GetView<LayoutController> {
                                         'Get it on',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 8,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
@@ -257,7 +250,7 @@ class Content01 extends GetView<LayoutController> {
                                         'Google play',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 24,
+                                          fontSize: 16,
                                           fontFamily: 'Roboto',
                                           fontWeight: FontWeight.w400,
                                         ),
@@ -268,14 +261,11 @@ class Content01 extends GetView<LayoutController> {
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 12,
-                          ),
                           const Text(
                             'Android 버전 출시 예정',
                             style: TextStyle(
                               color: Color(0xFF707070),
-                              fontSize: 15,
+                              fontSize: 10,
                               fontWeight: FontWeight.w400,
                             ),
                             textAlign: TextAlign.center,
