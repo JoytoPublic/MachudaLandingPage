@@ -30,13 +30,13 @@ class LandingPage extends GetView<LayoutController> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           controller.maxWidth.value = constraints.maxWidth;
-          controller.isDesktop.value = constraints.maxWidth > 420;
+          controller.isDesktop.value = constraints.maxWidth > 720;
 
           return Stack(
             children: [
               Obx(() => Listener(
                     onPointerMove: (event) {
-                      if (!controller.isDesktop.value) {
+                      if (!GetPlatform.isDesktop) {
                         WebScrollController.to.offset.value = _controller.offset;
                       }
                     },

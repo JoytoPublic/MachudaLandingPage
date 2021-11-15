@@ -15,7 +15,7 @@ class Content04Mobile extends GetView<WebScrollController> {
         child: Stack(
           children: [
             Positioned(
-              left: 100,
+              left: !GetPlatform.isDesktop ? 100 : 280,
               top: 0,
               bottom: 0,
               child: Container(
@@ -30,7 +30,13 @@ class Content04Mobile extends GetView<WebScrollController> {
             Obx(() => AnimatedPositioned(
                   duration: const Duration(milliseconds: 1000),
                   curve: Curves.ease,
-                  left: controller.offset.value > 3180 ? 24 : 72,
+                  left: !GetPlatform.isDesktop
+                      ? controller.offset.value > 3180
+                          ? 24
+                          : 72
+                      : controller.offset.value > 3180
+                          ? 120
+                          : 168,
                   top: 0,
                   bottom: 0,
                   child: Image.asset(

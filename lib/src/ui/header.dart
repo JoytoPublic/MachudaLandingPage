@@ -11,11 +11,13 @@ class Header extends GetView<WebScrollController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() => Container(
-          color: controller.offset.value < 780
-              ? Colors.white.withOpacity(0.0)
-              : controller.offset.value > 840
-                  ? Colors.white.withOpacity(1.0)
-                  : Colors.white.withOpacity(1 - ((840 - controller.offset.value) / 60)),
+          color: !LayoutController.to.isDesktop.value
+              ? Colors.white
+              : controller.offset.value < 780
+                  ? Colors.white.withOpacity(0.0)
+                  : controller.offset.value > 840
+                      ? Colors.white.withOpacity(1.0)
+                      : Colors.white.withOpacity(1 - ((840 - controller.offset.value) / 60)),
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 1560, maxHeight: 60),
@@ -30,7 +32,7 @@ class Header extends GetView<WebScrollController> {
                   children: [
                     Image.asset(
                       'assets/machuda.png',
-                      height: 40,
+                      height: !GetPlatform.isDesktop ? 32 : 40,
                     ),
                     const SizedBox(
                       width: 12,
@@ -77,7 +79,7 @@ class Header extends GetView<WebScrollController> {
                             'CONTACT',
                             style: TextStyle(
                               color: const Color(0xFF37352F),
-                              fontSize: LayoutController.to.isDesktop.value ? 18 : 13,
+                              fontSize: !GetPlatform.isDesktop ? 13 : 18,
                               fontWeight: FontWeight.w500,
                             ),
                           ),

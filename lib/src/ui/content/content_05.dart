@@ -49,7 +49,11 @@ class Content05 extends GetView<WebScrollController> {
                           text: TextSpan(
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: LayoutController.to.isDesktop.value ? 40 : 28,
+                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                  ? 40
+                                  : LayoutController.to.maxWidth.value > 720
+                                      ? 32
+                                      : 28,
                               fontWeight: FontWeight.w400,
                             ),
                             children: [
@@ -91,11 +95,15 @@ class Content05 extends GetView<WebScrollController> {
                           child: (() {
                             if (LayoutController.to.isDesktop.value) {
                               return SizedBox(
-                                width: 285,
-                                height: 80,
+                                width: LayoutController.to.maxWidth.value > 1080 ? 280 : 224,
+                                height: LayoutController.to.maxWidth.value > 1080 ? 80 : 68,
                                 child: ElevatedButton(
-                                  onPressed: () {
-                                    // 아이패드 다운로드
+                                  onPressed: () async {
+                                    var _url = 'https://www.naver.com/';
+
+                                    await canLaunch(_url)
+                                        ? await launch(_url)
+                                        : throw 'Could not launch $_url';
                                   },
                                   style: ElevatedButton.styleFrom(
                                     primary: const Color(0xFFC70D03),
@@ -108,7 +116,7 @@ class Content05 extends GetView<WebScrollController> {
                                     children: [
                                       Image.asset(
                                         'assets/apple.png',
-                                        height: 44,
+                                        height: LayoutController.to.maxWidth.value > 1080 ? 44 : 32,
                                       ),
                                       const SizedBox(
                                         width: 18,
@@ -116,12 +124,14 @@ class Content05 extends GetView<WebScrollController> {
                                       Column(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: const [
+                                        children: [
                                           Text(
                                             'Available on the iPad',
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 18,
+                                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                                  ? 16
+                                                  : 12,
                                               fontWeight: FontWeight.w500,
                                             ),
                                           ),
@@ -129,7 +139,9 @@ class Content05 extends GetView<WebScrollController> {
                                             'Apple store',
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 24,
+                                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                                  ? 24
+                                                  : 21,
                                               fontFamily: 'Roboto',
                                               fontWeight: FontWeight.w400,
                                             ),

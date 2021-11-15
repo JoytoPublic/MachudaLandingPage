@@ -44,246 +44,258 @@ class Content01 extends GetView<LayoutController> {
                   const SizedBox(
                     height: 196,
                   ),
-                  const Text(
-                    'AI 맞춤공부로'
-                    '\n어떤 문제든 똑소리 나게 \'맞추다\'',
-                    style: TextStyle(
-                      color: Color(0xFF37352F),
-                      fontSize: 48,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  Obx(() => Text(
+                        'AI 맞춤공부로'
+                        '\n어떤 문제든 똑소리 나게 \'맞추다\'',
+                        style: TextStyle(
+                          color: const Color(0xFF37352F),
+                          fontSize: LayoutController.to.maxWidth.value > 1080 ? 48 : 36,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        textAlign: TextAlign.center,
+                      )),
                   const SizedBox(
                     height: 72,
                   ),
-                  const Text(
-                    '공부 인생이 바뀌는 터닝포인트!'
-                    '\n1:1 학습케어앱 맞추다를 만나보세요.'
-                    '\n성적 상승을 위해 내게 꼭 맞는 공부를 초밀착가이드 해줄 거예요.',
-                    style: TextStyle(
-                      color: Color(0xFF37352F),
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                  Obx(() => Text(
+                        '공부 인생이 바뀌는 터닝포인트!'
+                        '\n1:1 학습케어앱 맞추다를 만나보세요.'
+                        '\n성적 상승을 위해 내게 꼭 맞는 공부를 초밀착가이드 해줄 거예요.',
+                        style: TextStyle(
+                          color: const Color(0xFF37352F),
+                          fontSize: LayoutController.to.maxWidth.value > 1080 ? 18 : 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        textAlign: TextAlign.center,
+                      )),
                   const SizedBox(
                     height: 84,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // 아이패드 다운로드
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  Obx(() => Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            width: 280,
-                            height: 80,
-                            child: ElevatedButton(
-                              onPressed: () async {
-                                var _url = 'https://www.naver.com/';
+                          // 아이패드 다운로드
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: LayoutController.to.maxWidth.value > 1080 ? 280 : 224,
+                                height: LayoutController.to.maxWidth.value > 1080 ? 80 : 68,
+                                child: ElevatedButton(
+                                  onPressed: () async {
+                                    var _url = 'https://www.naver.com/';
 
-                                await canLaunch(_url)
-                                    ? await launch(_url)
-                                    : throw 'Could not launch $_url';
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: const Color(0xFFC70D03),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(14),
+                                    await canLaunch(_url)
+                                        ? await launch(_url)
+                                        : throw 'Could not launch $_url';
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    primary: const Color(0xFFC70D03),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(14),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset(
+                                        'assets/apple.png',
+                                        height: LayoutController.to.maxWidth.value > 1080 ? 44 : 32,
+                                      ),
+                                      const SizedBox(
+                                        width: 18,
+                                      ),
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Available on the iPad',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                                  ? 16
+                                                  : 12,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Text(
+                                            'Apple store',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                                  ? 24
+                                                  : 21,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    'assets/apple.png',
-                                    height: 44,
+                              SizedBox(
+                                height: LayoutController.to.maxWidth.value > 1080 ? 12 : 4,
+                              ),
+                              Text(
+                                'iOS 0.6 이상 지원',
+                                style: TextStyle(
+                                  color: const Color(0xFF707070),
+                                  fontSize: LayoutController.to.maxWidth.value > 1080 ? 15 : 12,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            width: 24,
+                          ),
+                          // 아이폰 다운로드
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Opacity(
+                                opacity: 0.4,
+                                child: Container(
+                                  width: LayoutController.to.maxWidth.value > 1080 ? 280 : 224,
+                                  height: LayoutController.to.maxWidth.value > 1080 ? 80 : 68,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFC70D03),
+                                    borderRadius: BorderRadius.circular(14),
                                   ),
-                                  const SizedBox(
-                                    width: 18,
-                                  ),
-                                  Column(
+                                  child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        'Available on the iPad',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                    children: [
+                                      Image.asset(
+                                        'assets/apple.png',
+                                        height: LayoutController.to.maxWidth.value > 1080 ? 44 : 32,
                                       ),
-                                      Text(
-                                        'Apple store',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 24,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                      const SizedBox(
+                                        width: 18,
+                                      ),
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Available on the iPhone',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                                  ? 16
+                                                  : 12,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Text(
+                                            'Apple store',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                                  ? 24
+                                                  : 21,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
+                              SizedBox(
+                                height: LayoutController.to.maxWidth.value > 1080 ? 12 : 4,
+                              ),
+                              Text(
+                                'iPhone 버전 출시 예정',
+                                style: TextStyle(
+                                  color: const Color(0xFF707070),
+                                  fontSize: LayoutController.to.maxWidth.value > 1080 ? 15 : 12,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
                           ),
                           const SizedBox(
-                            height: 12,
+                            width: 24,
                           ),
-                          const Text(
-                            'iOS 0.6 이상 지원',
-                            style: TextStyle(
-                              color: Color(0xFF707070),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        width: 24,
-                      ),
-                      // 아이폰 다운로드
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Opacity(
-                            opacity: 0.4,
-                            child: Container(
-                              width: 280,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFC70D03),
-                                borderRadius: BorderRadius.circular(14),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    'assets/apple.png',
-                                    height: 44,
+                          // 안드로이드 다운로드
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Opacity(
+                                opacity: 0.4,
+                                child: Container(
+                                  width: LayoutController.to.maxWidth.value > 1080 ? 280 : 224,
+                                  height: LayoutController.to.maxWidth.value > 1080 ? 80 : 68,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFC70D03),
+                                    borderRadius: BorderRadius.circular(14),
                                   ),
-                                  const SizedBox(
-                                    width: 18,
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        'Available on the iPhone',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(
+                                        width: 32,
                                       ),
-                                      Text(
-                                        'Apple store',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 24,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                      Image.asset(
+                                        'assets/google_play.png',
+                                        height: LayoutController.to.maxWidth.value > 1080 ? 44 : 32,
+                                      ),
+                                      const SizedBox(
+                                        width: 18,
+                                      ),
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Get it on',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                                  ? 16
+                                                  : 12,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          Text(
+                                            'Google play',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: LayoutController.to.maxWidth.value > 1080
+                                                  ? 24
+                                                  : 21,
+                                              fontFamily: 'Roboto',
+                                              fontWeight: FontWeight.w400,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
-                                ],
+                                ),
                               ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 12,
-                          ),
-                          const Text(
-                            'iPhone 버전 출시 예정',
-                            style: TextStyle(
-                              color: Color(0xFF707070),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            textAlign: TextAlign.center,
+                              SizedBox(
+                                height: LayoutController.to.maxWidth.value > 1080 ? 12 : 4,
+                              ),
+                              Text(
+                                'Android 버전 출시 예정',
+                                style: TextStyle(
+                                  color: const Color(0xFF707070),
+                                  fontSize: LayoutController.to.maxWidth.value > 1080 ? 15 : 12,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
                           ),
                         ],
-                      ),
-                      const SizedBox(
-                        width: 24,
-                      ),
-                      // 안드로이드 다운로드
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Opacity(
-                            opacity: 0.4,
-                            child: Container(
-                              width: 280,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFC70D03),
-                                borderRadius: BorderRadius.circular(14),
-                              ),
-                              child: Row(
-                                children: [
-                                  const SizedBox(
-                                    width: 32,
-                                  ),
-                                  Image.asset(
-                                    'assets/google_play.png',
-                                    height: 44,
-                                  ),
-                                  const SizedBox(
-                                    width: 18,
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        'Get it on',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Google play',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 24,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 12,
-                          ),
-                          const Text(
-                            'Android 버전 출시 예정',
-                            style: TextStyle(
-                              color: Color(0xFF707070),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                      )),
                 ],
               ),
             ),

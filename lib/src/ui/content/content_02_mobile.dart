@@ -11,6 +11,7 @@ class Content02Mobile extends GetView<WebScrollController> {
       color: Colors.white,
       padding: const EdgeInsets.symmetric(vertical: 32),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // 디지털 문제풀이
           Obx(() => Column(
