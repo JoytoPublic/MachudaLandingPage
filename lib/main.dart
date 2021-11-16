@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:machuda_landing_page/src/ui/landing_page.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -17,7 +19,10 @@ class MyApp extends StatelessWidget {
         fontFamily: 'NotoSansKR',
         primaryColor: const Color(0xFFC70D03),
       ),
-      home: const LandingPage(),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/' , page: ()=>const LandingPage())
+      ],
     );
   }
 }

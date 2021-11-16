@@ -83,11 +83,15 @@ class Content01 extends GetView<LayoutController> {
                                 height: LayoutController.to.maxWidth.value > 1080 ? 80 : 68,
                                 child: ElevatedButton(
                                   onPressed: () async {
-                                    var _url = 'https://www.naver.com/';
-
-                                    await canLaunch(_url)
-                                        ? await launch(_url)
-                                        : throw 'Could not launch $_url';
+                                    Get.defaultDialog(
+                                      title: " MACHUDA",
+                                      middleText: "11월 22일 출시 예정입니다.",
+                                    );
+                                    // var _url = 'https://www.naver.com/';
+                                    //
+                                    // await canLaunch(_url)
+                                    //     ? await launch(_url)
+                                    //     : throw 'Could not launch $_url';
                                   },
                                   style: ElevatedButton.styleFrom(
                                     primary: const Color(0xFFC70D03),
@@ -140,7 +144,7 @@ class Content01 extends GetView<LayoutController> {
                                 height: LayoutController.to.maxWidth.value > 1080 ? 12 : 4,
                               ),
                               Text(
-                                'iOS 0.6 이상 지원',
+                                'iOS 13.0 이상 지원',
                                 style: TextStyle(
                                   color: const Color(0xFF707070),
                                   fontSize: LayoutController.to.maxWidth.value > 1080 ? 15 : 12,
