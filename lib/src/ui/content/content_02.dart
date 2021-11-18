@@ -87,7 +87,7 @@ class Content02 extends GetView<WebScrollController> {
                             curve: Curves.ease,
                             padding: EdgeInsets.only(right: controller.offset.value > 480 ? 60 : 0),
                             child: Image.asset(
-                              'assets/content_02_01.png',
+                              'assets/content_02_01.webp',
                               width: LayoutController.to.maxWidth.value < 1400
                                   ? LayoutController.to.maxWidth.value - 520
                                   : 880,
@@ -118,7 +118,7 @@ class Content02 extends GetView<WebScrollController> {
                             curve: Curves.ease,
                             padding: EdgeInsets.only(left: controller.offset.value > 1230 ? 60 : 0),
                             child: Image.asset(
-                              'assets/content_02_02.png',
+                              'assets/content_02_02.webp',
                               width: LayoutController.to.maxWidth.value < 1350
                                   ? LayoutController.to.maxWidth.value - 550
                                   : 800,

@@ -77,7 +77,7 @@ class Content03 extends GetView<WebScrollController> {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 168),
                             child: Image.asset(
-                              'assets/content_03_01.png',
+                              'assets/content_03_01.webp',
                               height: 480,
                             ),
                           ),
@@ -160,7 +160,7 @@ class Content03 extends GetView<WebScrollController> {
                                 padding:
                                     EdgeInsets.only(right: controller.offset.value > 3000 ? 60 : 0),
                                 child: Image.asset(
-                                  'assets/content_03_02.png',
+                                  'assets/content_03_02.webp',
                                   width: LayoutController.to.maxWidth.value > 1480
                                       ? 760
                                       : LayoutController.to.maxWidth.value > 1080
