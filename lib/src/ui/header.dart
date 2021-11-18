@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:machuda_landing_page/src/controller/layout_controller.dart';
 import 'package:machuda_landing_page/src/controller/web_scroll_controller.dart';
 
@@ -31,8 +32,14 @@ class Header extends GetView<WebScrollController> {
                 child: Row(
                   children: [
                     Image.asset(
-                      'assets/machuda.png',
+                      'assets/machuda_logo.png',
                       height: !GetPlatform.isDesktop ? 32 : 40,
+                    ),
+                    Text(
+                      "MACHUDA",
+                      style:GoogleFonts.changaOne(
+                        fontSize: 21
+                      ),
                     ),
                     const SizedBox(
                       width: 12,
