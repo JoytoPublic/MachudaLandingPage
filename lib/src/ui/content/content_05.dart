@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:machuda_landing_page/src/controller/layout_controller.dart';
 import 'package:machuda_landing_page/src/controller/web_scroll_controller.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Content05 extends GetView<WebScrollController> {
   const Content05({Key? key}) : super(key: key);
@@ -14,7 +13,7 @@ class Content05 extends GetView<WebScrollController> {
       child: Stack(
         children: [
           Obx(() => Image.asset(
-                'assets/background_05.png',
+                'assets/background_05.webp',
                 width: LayoutController.to.maxWidth.value,
                 height: 360,
                 fit: BoxFit.cover,
@@ -163,7 +162,7 @@ class Content05 extends GetView<WebScrollController> {
                                 child: ElevatedButton(
                                   onPressed: () async {
                                     Get.defaultDialog(
-                                        title: " MACHUDA",
+                                      title: "MACHUDA",
                                       middleText: "11월 22일 출시 예정입니다.",
                                     );
                                     // var _url = 'https://www.naver.com/';

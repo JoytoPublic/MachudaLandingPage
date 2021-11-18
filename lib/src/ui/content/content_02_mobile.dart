@@ -77,7 +77,7 @@ class Content02Mobile extends GetView<WebScrollController> {
                       curve: Curves.ease,
                       padding: EdgeInsets.only(left: controller.offset.value > 440 ? 0 : 60),
                       child: Image.asset(
-                        'assets/content_02_01.png',
+                        'assets/content_02_01.webp',
                         width: 300,
                       ),
                     ),
@@ -151,7 +151,7 @@ class Content02Mobile extends GetView<WebScrollController> {
                       curve: Curves.ease,
                       padding: EdgeInsets.only(left: controller.offset.value > 1080 ? 0 : 60),
                       child: Image.asset(
-                        'assets/content_02_02.png',
+                        'assets/content_02_02.webp',
                         width: 300,
                       ),
                     ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:machuda_landing_page/src/controller/layout_controller.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Content01Mobile extends GetView<LayoutController> {
   const Content01Mobile({Key? key}) : super(key: key);
@@ -30,7 +29,7 @@ class Content01Mobile extends GetView<LayoutController> {
             child: Padding(
               padding: const EdgeInsets.only(left: 120, bottom: 240),
               child: Image.asset(
-                'assets/circle.png',
+                'assets/circle.webp',
                 height: 250,
               ),
             ),
@@ -85,7 +84,7 @@ class Content01Mobile extends GetView<LayoutController> {
                             child: ElevatedButton(
                               onPressed: () async {
                                 Get.defaultDialog(
-                                  title: " MACHUDA",
+                                  title: "MACHUDA",
                                   middleText: "11월 22일 출시 예정입니다.",
                                 );
                                 // var _url = 'https://www.naver.com/';

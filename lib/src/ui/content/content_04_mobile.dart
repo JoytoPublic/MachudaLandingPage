@@ -40,7 +40,7 @@ class Content04Mobile extends GetView<WebScrollController> {
                   top: 0,
                   bottom: 0,
                   child: Image.asset(
-                    'assets/content_04.png',
+                    'assets/content_04.webp',
                     width: 360,
                   ),
                 )),

@@ -77,9 +77,9 @@ class Content03Mobile extends GetView<WebScrollController> {
                       child: AnimatedPadding(
                         duration: const Duration(milliseconds: 1000),
                         curve: Curves.ease,
-                        padding: EdgeInsets.only(top: controller.offset.value > 1800 ? 0 : 60),
+                        padding: EdgeInsets.only(left: 48, top: controller.offset.value > 1800 ? 0 : 60),
                         child: Image.asset(
-                          'assets/content_03_01.png',
+                          'assets/content_03_01.webp',
                           width: 300,
                         ),
                       ),
@@ -149,7 +149,7 @@ class Content03Mobile extends GetView<WebScrollController> {
                         curve: Curves.ease,
                         padding: EdgeInsets.only(left: controller.offset.value > 2340 ? 0 : 60),
                         child: Image.asset(
-                          'assets/content_03_02.png',
+                          'assets/content_03_02.webp',
                           width: 300,
                         ),
                       ),
