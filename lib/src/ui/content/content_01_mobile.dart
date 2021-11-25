@@ -84,15 +84,11 @@ class Content01Mobile extends GetView<LayoutController> {
                             height: 56,
                             child: ElevatedButton(
                               onPressed: () async {
-                                Get.defaultDialog(
-                                  title: " MACHUDA",
-                                  middleText: "11월 22일 출시 예정입니다.",
-                                );
-                                // var _url = 'https://www.naver.com/';
-                                //
-                                // await canLaunch(_url)
-                                //     ? await launch(_url)
-                                //     : throw 'Could not launch $_url';
+                                var _url = 'https://apps.apple.com/kr/app/%EB%A7%9E%EC%B6%94%EB%8B%A4-machuda-for-%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC/id1590305807';
+
+                                await canLaunch(_url)
+                                    ? await launch(_url)
+                                    : throw 'Could not launch $_url';
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: const Color(0xFFC70D03),
