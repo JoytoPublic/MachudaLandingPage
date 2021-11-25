@@ -33,16 +33,19 @@ class Header extends GetView<WebScrollController> {
                   children: [
                     Image.asset(
                       'assets/machuda_logo.png',
-                      height: !GetPlatform.isDesktop ? 32 : 40,
+                      height: !GetPlatform.isDesktop ? 40 : 48,
+                    ),
+                    const SizedBox(
+                      width: 4,
                     ),
                     Text(
                       "MACHUDA",
-                      style:GoogleFonts.changaOne(
-                        fontSize: 21
+                      style: GoogleFonts.archivoBlack(
+                        fontSize: !GetPlatform.isDesktop ? 18 : 24,
                       ),
                     ),
                     const SizedBox(
-                      width: 12,
+                      width: 8,
                     ),
                     Align(
                       alignment: Alignment.topCenter,

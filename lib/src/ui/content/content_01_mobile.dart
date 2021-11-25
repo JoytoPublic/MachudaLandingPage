@@ -30,7 +30,7 @@ class Content01Mobile extends GetView<LayoutController> {
             child: Padding(
               padding: const EdgeInsets.only(left: 120, bottom: 240),
               child: Image.asset(
-                'assets/circle.png',
+                'assets/circle.webp',
                 height: 250,
               ),
             ),

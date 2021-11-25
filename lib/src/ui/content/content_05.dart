@@ -14,7 +14,7 @@ class Content05 extends GetView<WebScrollController> {
       child: Stack(
         children: [
           Obx(() => Image.asset(
-                'assets/background_05.png',
+                'assets/background_05.webp',
                 width: LayoutController.to.maxWidth.value,
                 height: 360,
                 fit: BoxFit.cover,

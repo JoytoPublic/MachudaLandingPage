@@ -56,9 +56,9 @@ class LandingPage extends GetView<LayoutController> {
                       }
                     },
                     child: ListView(
-                      physics: controller.isDesktop.value
-                          ? const NeverScrollableScrollPhysics()
-                          : const ClampingScrollPhysics(),
+                      physics: !GetPlatform.isDesktop
+                          ? const ClampingScrollPhysics()
+                          : const NeverScrollableScrollPhysics(),
                       controller: _controller,
                       children: [
                         Column(
