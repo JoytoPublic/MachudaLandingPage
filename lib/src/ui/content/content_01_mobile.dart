@@ -75,7 +75,7 @@ class Content01Mobile extends GetView<LayoutController> {
                   ),
                   Column(
                     children: [
-                      // 아이패드 다운로드
+                      // iOS 다운로드
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -145,84 +145,33 @@ class Content01Mobile extends GetView<LayoutController> {
                         ],
                       ),
                       const SizedBox(
-                        height: 18,
-                      ),
-                      // 아이폰 다운로드
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Opacity(
-                            opacity: 0.4,
-                            child: Container(
-                              width: 180,
-                              height: 56,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFC70D03),
-                                borderRadius: BorderRadius.circular(14),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    'assets/apple.png',
-                                    height: 24,
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
-                                        'Available on the iPhone',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 8,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Apple store',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          const Text(
-                            'iPhone 버전 출시 예정',
-                            style: TextStyle(
-                              color: Color(0xFF707070),
-                              fontSize: 10,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 18,
+                        height: 24,
                       ),
                       // 안드로이드 다운로드
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Opacity(
-                            opacity: 0.4,
-                            child: Container(
-                              width: 180,
-                              height: 56,
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFC70D03),
-                                borderRadius: BorderRadius.circular(14),
+                          SizedBox(
+                            width: 180,
+                            height: 56,
+                            child: ElevatedButton(
+                              onPressed: () async {
+                                Get.defaultDialog(
+                                  title: "MACHUDA",
+                                  middleText: "곧 출시 예정입니다.",
+                                );
+
+                                // var _url = 'https://apps.apple.com/kr/app/%EB%A7%9E%EC%B6%94%EB%8B%A4-machuda-for-%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC/id1590305807';
+                                //
+                                // await canLaunch(_url)
+                                //     ? await launch(_url)
+                                //     : throw 'Could not launch $_url';
+                              },
+                              style: ElevatedButton.styleFrom(
+                                primary: const Color(0xFFC70D03),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
                               ),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,

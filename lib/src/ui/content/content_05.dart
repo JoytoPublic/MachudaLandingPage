@@ -42,7 +42,7 @@ class Content05 extends GetView<WebScrollController> {
                                     ? 60
                                     : 20
                                 : controller.offset.value > 3900
-                                    ? 60
+                                    ? 40
                                     : 20),
                         child: RichText(
                           textAlign: TextAlign.center,
@@ -70,7 +70,7 @@ class Content05 extends GetView<WebScrollController> {
                         ),
                       ),
                     ),
-                    // 아이패드 다운로드
+                    // 앱 다운로드
                     AnimatedOpacity(
                       duration: const Duration(milliseconds: 1000),
                       curve: Curves.ease,
@@ -90,122 +90,272 @@ class Content05 extends GetView<WebScrollController> {
                                       ? 60
                                       : 20
                                   : controller.offset.value > 4020
-                                      ? 60
+                                      ? 40
                                       : 20),
                           child: (() {
                             if (LayoutController.to.isDesktop.value) {
-                              return SizedBox(
-                                width: LayoutController.to.maxWidth.value > 1080 ? 280 : 224,
-                                height: LayoutController.to.maxWidth.value > 1080 ? 80 : 68,
-                                child: ElevatedButton(
-                                  onPressed: () async {
-                                     var _url = 'https://apps.apple.com/kr/app/%EB%A7%9E%EC%B6%94%EB%8B%A4-machuda-for-%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC/id1590305807';
+                              return Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // iOS 다운로드
+                                  SizedBox(
+                                    width: LayoutController.to.maxWidth.value > 1080 ? 265 : 224,
+                                    height: LayoutController.to.maxWidth.value > 1080 ? 80 : 68,
+                                    child: ElevatedButton(
+                                      onPressed: () async {
+                                        var _url =
+                                            'https://apps.apple.com/kr/app/%EB%A7%9E%EC%B6%94%EB%8B%A4-machuda-for-%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC/id1590305807';
 
-                                     await canLaunch(_url)
-                                         ? await launch(_url)
-                                         : throw 'Could not launch $_url';
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    primary: const Color(0xFFC70D03),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(14),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset(
-                                        'assets/apple.png',
-                                        height: LayoutController.to.maxWidth.value > 1080 ? 44 : 32,
+                                        await canLaunch(_url)
+                                            ? await launch(_url)
+                                            : throw 'Could not launch $_url';
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        primary: const Color(0xFFC70D03),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(14),
+                                        ),
                                       ),
-                                      const SizedBox(
-                                        width: 18,
-                                      ),
-                                      Column(
+                                      child: Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            'Available on the iPad',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: LayoutController.to.maxWidth.value > 1080
-                                                  ? 16
-                                                  : 12,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                          Image.asset(
+                                            'assets/apple.png',
+                                            height:
+                                                LayoutController.to.maxWidth.value > 1080 ? 44 : 32,
                                           ),
-                                          Text(
-                                            'Apple store',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: LayoutController.to.maxWidth.value > 1080
-                                                  ? 24
-                                                  : 21,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
+                                          const SizedBox(
+                                            width: 18,
+                                          ),
+                                          Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Available on the iOS',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize:
+                                                      LayoutController.to.maxWidth.value > 1080
+                                                          ? 16
+                                                          : 12,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Apple store',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize:
+                                                      LayoutController.to.maxWidth.value > 1080
+                                                          ? 24
+                                                          : 21,
+                                                  fontFamily: 'Roboto',
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
+                                  const SizedBox(
+                                    width: 64,
+                                  ),
+                                  // 안드로이드 다운로드
+                                  SizedBox(
+                                    width: LayoutController.to.maxWidth.value > 1080 ? 260 : 224,
+                                    height: LayoutController.to.maxWidth.value > 1080 ? 80 : 68,
+                                    child: ElevatedButton(
+                                      onPressed: () async {
+                                        Get.defaultDialog(
+                                          title: "MACHUDA",
+                                          middleText: "곧 출시 예정입니다.",
+                                        );
+
+                                        // var _url = 'https://apps.apple.com/kr/app/%EB%A7%9E%EC%B6%94%EB%8B%A4-machuda-for-%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC/id1590305807';
+                                        //
+                                        // await canLaunch(_url)
+                                        //     ? await launch(_url)
+                                        //     : throw 'Could not launch $_url';
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        primary: const Color(0xFFC70D03),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(14),
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset(
+                                            'assets/google_play.png',
+                                            height:
+                                                LayoutController.to.maxWidth.value > 1080 ? 44 : 32,
+                                          ),
+                                          const SizedBox(
+                                            width: 24,
+                                          ),
+                                          Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Get it on',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize:
+                                                      LayoutController.to.maxWidth.value > 1080
+                                                          ? 16
+                                                          : 12,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Google play',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize:
+                                                      LayoutController.to.maxWidth.value > 1080
+                                                          ? 24
+                                                          : 21,
+                                                  fontFamily: 'Roboto',
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               );
                             } else {
-                              return SizedBox(
-                                width: 180,
-                                height: 56,
-                                child: ElevatedButton(
-                                  onPressed: () async {
-                                    var _url = 'https://apps.apple.com/kr/app/%EB%A7%9E%EC%B6%94%EB%8B%A4-machuda-for-%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC/id1590305807';
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // iOS 다운로드
+                                  SizedBox(
+                                    width: 180,
+                                    height: 56,
+                                    child: ElevatedButton(
+                                      onPressed: () async {
+                                        var _url =
+                                            'https://apps.apple.com/kr/app/%EB%A7%9E%EC%B6%94%EB%8B%A4-machuda-for-%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC/id1590305807';
 
-                                    await canLaunch(_url)
-                                        ? await launch(_url)
-                                        : throw 'Could not launch $_url';
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    primary: const Color(0xFFC70D03),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(14),
-                                    ),
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Image.asset(
-                                        'assets/apple.png',
-                                        height: 24,
+                                        await canLaunch(_url)
+                                            ? await launch(_url)
+                                            : throw 'Could not launch $_url';
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        primary: const Color(0xFFC70D03),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(14),
+                                        ),
                                       ),
-                                      const SizedBox(
-                                        width: 10,
-                                      ),
-                                      Column(
+                                      child: Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: const [
-                                          Text(
-                                            'Available on the iPad',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 8,
-                                              fontWeight: FontWeight.w500,
-                                            ),
+                                        children: [
+                                          Image.asset(
+                                            'assets/apple.png',
+                                            height: 24,
                                           ),
-                                          Text(
-                                            'Apple store',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontFamily: 'Roboto',
-                                              fontWeight: FontWeight.w400,
-                                            ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: const [
+                                              Text(
+                                                'Available on the iPad',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 8,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Apple store',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                  fontFamily: 'Roboto',
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
+                                  const SizedBox(
+                                    height: 8,
+                                  ),
+                                  // 안드로이드 다운로드
+                                  SizedBox(
+                                    width: 180,
+                                    height: 56,
+                                    child: ElevatedButton(
+                                      onPressed: () async {
+                                        Get.defaultDialog(
+                                          title: "MACHUDA",
+                                          middleText: "곧 출시 예정입니다.",
+                                        );
+
+                                        // var _url = 'https://apps.apple.com/kr/app/%EB%A7%9E%EC%B6%94%EB%8B%A4-machuda-for-%EC%A0%84%EA%B8%B0%EA%B8%B0%EC%82%AC/id1590305807';
+                                        //
+                                        // await canLaunch(_url)
+                                        //     ? await launch(_url)
+                                        //     : throw 'Could not launch $_url';
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        primary: const Color(0xFFC70D03),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(14),
+                                        ),
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Image.asset(
+                                            'assets/google_play.png',
+                                            height: 24,
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          Column(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: const [
+                                              Text(
+                                                'Get it on',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 8,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                              ),
+                                              Text(
+                                                'Google play',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 16,
+                                                  fontFamily: 'Roboto',
+                                                  fontWeight: FontWeight.w400,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               );
                             }
                           }())),
